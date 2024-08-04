@@ -233,16 +233,6 @@ export async function run() {
         core.info(`or: ${tmateSSH.replace(/^ssh/, tmateSSHDashI)}`)
       }
 
-      if (continueFileExists()) {
-        core.info("Exiting debugging session because the continue file was created")
-        break
-      }
-
-      if (didTmateQuit()) {
-        core.info("Exiting debugging session 'tmate' quit")
-        break
-      }
-
       await sleep(5000)
     }
 
