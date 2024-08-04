@@ -252,6 +252,7 @@ export async function run() {
 }
 
 function didTmateQuit() {
+  return false
   const tmateSocketPath = process.platform === "win32" ? "C:/msys64/tmp/tmate.sock" : "/tmp/tmate.sock"
   return !fs.existsSync(tmateSocketPath)
 }
