@@ -62,15 +62,6 @@ export async function run() {
             : `Waiting for client to connect (at most ${seconds} more second(s))`
           }\n${message}`)
 
-          if (continueFileExists()) {
-            core.info("Exiting debugging session because the continue file was created")
-            break
-          }
-
-          if (didTmateQuit()) {
-            core.info("Exiting debugging session 'tmate' quit")
-            break
-          }
 
           await sleep(5000)
           if (!await hasAnyoneConnectedYet()) seconds -= 5
